@@ -6,38 +6,34 @@ function Student(name, gender, age) {
 }
 
 Student.prototype.setSubject = function (subjectName) {
-    this.setSubject = function (subjectName) {
     this.subject = subjectName;
   };
-}
 
-Student.prototype.addMarks = function (...marks) {
-  this.addMarks = function (...marksToAdd) {
+
+Student.prototype.addMarks = function (...marksToAdd) {
     if (!this.marks) {
         console.log("Error: Student has been expelled.")
         return;
     }
     this.marks.push(...marksToAdd);
    };
-}
+
 
 Student.prototype.getAverage = function () {
-  this.getAverage = function() {
     if (!this.marks || !this.marks.length) {
         return 0;
     }
     const sum = this.marks.reduce((acc, curr) => acc + curr);
     return sum / this.marks.length;
   };
-}
+
 
 Student.prototype.exclude = function (reason) {
-  this.exclude = function (reason) {
     delete this.subject;
     delete this.marks;
     this.excluded = reason;
   };
-}
+
 let student1 = new Student("Василиса", "женский", 19);
 student1.setSubject("Algebra");
 console.log(student1.getAverage()); // 0
