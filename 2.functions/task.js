@@ -69,7 +69,7 @@ function averageEvenElementsWorker(...arr) {
     }
   }
   if (countEventElement === 0) return 0;
-  return (sumEvenElement/countEventElement).toFixed(2);
+  return (sumEvenElement/countEventElement);
 }
 // summElementsWorker
 console.log(summElementsWorker()); // 0
